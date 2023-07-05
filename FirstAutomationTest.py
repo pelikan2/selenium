@@ -12,6 +12,9 @@ from selenium.webdriver.chrome.options import Options
 
 class FirstAutomationTests(unittest.TestCase):
 
+    if __name__ == "__main__":
+        unittest.main()
+
     def setUp(self):
         self.chrome_options = Options()
         self.chrome_options.add_experimental_option("detach", True)
@@ -31,8 +34,6 @@ class FirstAutomationTests(unittest.TestCase):
         URL = self.browser.current_url
         Assert.not_none(URL)
 
-        time.sleep(3)
-
     def tearDown(self):
         time.sleep(3)
 
@@ -49,5 +50,4 @@ class FirstAutomationTests(unittest.TestCase):
         Assert.not_none(URL)
 
 
-    if __name__ == "__main__":
-        unittest.main()
+
