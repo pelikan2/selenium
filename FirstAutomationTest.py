@@ -43,7 +43,7 @@ class FirstAutomationTests(unittest.TestCase):
         search_input = self.browser.find_element(By.ID, 'W0wltc')
         search_input.click()
         search_input = self.browser.find_element(By.ID, 'APjFqb')
-        search_input.send_keys("Hello world")
+        search_input.send_keys("Hello world A")
         time.sleep(3)
         search_input.submit()
         URL = self.browser.current_url
