@@ -1,5 +1,7 @@
 import time
 import unittest
+"""Assert  je na overovanie niecoho
+"""
 
 from unittestzero import Assert
 from selenium import webdriver
@@ -37,7 +39,19 @@ class FirstAutomationTests(unittest.TestCase):
         Assert.not_none(URL)
 
     def tearDown(self):
-        time.sleep(30)
-        self.browser.close()
+        time.sleep(3)
+
+
+    def test_2(self):
+        self.browser.get(self.base_url)
+        search_input = self.browser.find_element(By.ID, 'W0wltc')
+        search_input.click()
+        search_input = self.browser.find_element(By.ID, 'APjFqb')
+        search_input.send_keys("Hello world A")
+        time.sleep(3)
+        search_input.submit()
+        URL = self.browser.current_url
+        Assert.not_none(URL)
+
 
 
