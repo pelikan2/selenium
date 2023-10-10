@@ -26,8 +26,12 @@ class FirstAutomationTests(unittest.TestCase):
         self.browser.get(self.base_url)
         search_input = self.browser.find_element(By.ID, 'W0wltc')
         search_input.click()
-        #assert search_input.text == "Google"
-        search_input = self.browser.find_element(By.CLASS_NAME, 'gb_v')
+        search_input = self.browser.find_element(By.CLASS_NAME, 'gb_E')
+        search_input.click()
+        search_input = self.browser.find_element(By.ID, 'identifierId')
+        search_input.send_keys("pelikan.vladimir24@gmail.com")
+        time.sleep(3)
+        search_input = self.browser.find_element(By.ID, 'identifierNext')
         search_input.click()
         URL = self.browser.current_url
         Assert.not_none(URL)
