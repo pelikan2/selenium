@@ -36,8 +36,19 @@ class FirstAutomationTests(unittest.TestCase):
         URL = self.browser.current_url
         Assert.not_none(URL)
 
+    def test_gmail_search(self):
+        self.browser.get(self.base_url)
+        search_input = self.browser.find_element(By.ID, 'W0wltc')
+        search_input.click()
+        search_input = self.browser.find_element(By.CLASS_NAME, 'gLFyf')
+        search_input.click()
+        search_input.send_keys("pelikan")
+        search_input.submit()
+        search_input = self.browser.find_element(By.CLASS_NAME, 'GKS7s')
+        search_input.click()
+        URL = self.browser.current_url
+        Assert.contains('pelikan', URL)
+
     def tearDown(self):
-        time.sleep(30)
+        time.sleep(3)
         self.browser.close()
-
-
